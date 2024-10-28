@@ -86,8 +86,43 @@ class Program
 
     static void AdministrarVehiculos()
     {
-        // Implementation here
+        
+
+        int opcion = 0;
+        while (opcion != 5) {
+            Console.WriteLine("Menu Administrar Vehiculos");
+            Console.WriteLine("1. Añadir Vehiculo");
+            Console.WriteLine("2. Ver Vehiculo");
+            Console.WriteLine("3. Modificar Vehiculo");
+            Console.WriteLine("4. Remover Vehiculo");
+            Console.WriteLine("5. Volver a Menú Principal");
+            Console.Write("Ingresa una opcion(1-5): ");
+
+            opcion = int.Parse(Console.ReadLine());
+            switch (opcion) {
+                case 1:
+                    VehiculoHelper.AñadirVehiculo();
+                    break;
+                case 2:
+                    VehiculoHelper.VerVehiculo();
+                    break;
+                case 3:
+                    VehiculoHelper.ModificarVehiculo();
+                    break;
+                case 4:
+                    VehiculoHelper.RemoverVehiculo();
+                    break;
+                case 5:
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida, por favor intente de nuevo");
+                    break;
+
+            }
+        }
+
     }
+
 
     static void AdministrarRutas()
     {

@@ -9,6 +9,7 @@ namespace Etapa3Programacion
     internal class DriverHelper
     {
         static List<Driver> Drivers = new List<Driver>();
+        //Metodos
         public static void AñadirConductor()
         {
             Console.WriteLine("Ingrese el nombre del conductor");
@@ -21,6 +22,7 @@ namespace Etapa3Programacion
             string license = Console.ReadLine();
 
             int id = GenerateId();
+
             var driver = new Driver(id, name, lastName, document, license);
 
             Drivers.Add(driver);
