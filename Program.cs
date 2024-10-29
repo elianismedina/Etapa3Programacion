@@ -126,7 +126,42 @@ class Program
 
     static void AdministrarRutas()
     {
-        // Implementation here
+        int opcion = 0;
+        while (opcion != 5)
+        {
+            Console.WriteLine("Menu Administrar Rutas");
+            Console.WriteLine("1. Añadir Ruta");
+            Console.WriteLine("2. Ver Ruta");
+            Console.WriteLine("3. Modificar Ruta");
+            Console.WriteLine("4. Remover Ruta");
+            Console.WriteLine("5. Volver a Menú Principal");
+            Console.Write("Ingresa una opcion(1-5): ");
+
+            opcion = int.Parse(Console.ReadLine());
+            switch (opcion)
+            {
+                case 1:
+                    RouteHelper.AñadirRuta();
+                    break;
+                case 2:
+                    RouteHelper.VerRuta();
+                    break;
+                case 3:
+                    RouteHelper.ModificarRuta();
+                    break;
+                case 4:
+                    RouteHelper.RemoverRuta();
+                    break;
+                case 5:
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida, por favor intente de nuevo");
+                    break;
+
+            }
+        }
+
+
     }
 
     static void VenderTiquetes()

@@ -86,7 +86,7 @@ namespace Etapa3Programacion
         {
             Console.WriteLine("Ingrese el ID del vehiculo a remover");
             int id = int.Parse(Console.ReadLine());
-            Vehicle vehicle = Vehicles.FirstOrDefault(d => d.Id == id);
+            Vehicle vehicle = Vehicles.FirstOrDefault(v => v.Id == id);
             if (vehicle == null) {
                 Console.WriteLine("Vehiculo no encontrado");
                 return;
@@ -97,7 +97,7 @@ namespace Etapa3Programacion
         }
         private static int GenerateId()
         {
-            return Vehicles.Count > 0 ? Vehicles.Max(x => x.Id) + 1 : 1;
+            return Vehicles.Count > 0 ? Vehicles.Max(v => v.Id) + 1 : 1;
         }
     }
 }
