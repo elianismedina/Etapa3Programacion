@@ -8,7 +8,7 @@ namespace Etapa3Programacion
 {
     public class Ticket
     {
-        public Ticket(int id, double price, DateOnly date, string seatNumber, bool isSold)
+        public Ticket(int id, Passenger passenger,double price, DateOnly date, string seatNumber, bool isSold)
         {
             this.id = id;
             this.price = price;
@@ -18,7 +18,8 @@ namespace Etapa3Programacion
         }
 
         private int id { get; set; }
-       
+        private Passenger passenger { get; set; }
+
         private double price { get; set; }
         private DateOnly date { get; set; }
 
@@ -31,7 +32,12 @@ namespace Etapa3Programacion
             get { return id; }
             set { id = value; }
         }
-        
+        public Passenger Passenger
+        {
+            get { return passenger; }
+            set { passenger = value; }
+        }
+
         public double Price
         {
             get { return price; }

@@ -1,4 +1,11 @@
-﻿using Etapa3Programacion;
+﻿//Nombre: Elianis Manuel Medina Morón
+//Cédula: 1129578794
+//Fecha: 28/10/2024
+//Descripción: Programa que simula un sistema de transporte público, donde se pueden administrar conductores, vehículos, rutas y tiquetes.
+//Grupo: 213023_218
+//Programa: Ingeniería Multimedia
+
+using Etapa3Programacion;
 using System;
 
 class Program
@@ -6,7 +13,7 @@ class Program
     static void Main(string[] args)
     {
         int opcion = 0;
-        while (opcion != 6)
+        while (opcion != 7)
         {
             Console.WriteLine("Sistema de transporte público");
             Console.WriteLine("1. Administrar Conductores");
@@ -14,7 +21,8 @@ class Program
             Console.WriteLine("3. Administrar Rutas");
             Console.WriteLine("4. Administrar Véhiculos");
             Console.WriteLine("5. Administrar Tiquetes");
-            Console.WriteLine("6. Salir");
+            Console.WriteLine("6. Administrar Pasajeros");
+            Console.WriteLine("7. Salir");
             Console.Write("Ingresa una opcion(1-6): ");
 
             opcion = int.Parse(Console.ReadLine());
@@ -37,6 +45,9 @@ class Program
                     AdministrarTiquetes();
                     break;
                 case 6:
+                    AdministrarPasajeros();
+                    break;
+                case 7:
                     Console.WriteLine("Gracias por usar el sistema");
                     break;
                 default:
@@ -167,14 +178,15 @@ class Program
     static void AdministrarTiquetes()
     {
         int opcion = 0;
-        while (opcion != 5)
+        while (opcion != 6)
         {
             Console.WriteLine("Menú Administrar Tiquetes");
             Console.WriteLine("1. Añadir tiquete");
             Console.WriteLine("2. Ver tiquetes");
             Console.WriteLine("3. Modificar tiquete");
             Console.WriteLine("4. Remover tiquete");
-            Console.WriteLine("5. Volver a Menú Principal");
+            Console.WriteLine("5. Vender tiquete");
+            Console.WriteLine("6. Volver a Menú Principal");
             Console.Write("Ingresa una opcion(1-5): ");
 
             opcion = int.Parse(Console.ReadLine());
@@ -193,6 +205,9 @@ class Program
                     TicketHelper.DeleteTicket();
                     break;
                 case 5:
+                    TicketHelper.SellTicket();
+                    break;
+                case 6:
                     break;
                 default:
                     Console.WriteLine("Opción no válida, por favor intente de nuevo");
@@ -202,5 +217,44 @@ class Program
         }
 
         
+    }
+
+    static void AdministrarPasajeros()
+    {
+        int opcion = 0;
+        while (opcion != 5)
+        {
+            Console.WriteLine("Menú Administrar Pasajeros");
+            Console.WriteLine("1. Añadir pasajero");
+            Console.WriteLine("2. Ver pasajeros");
+            Console.WriteLine("3. Modificar pasajero");
+            Console.WriteLine("4. Remover pasajero");
+            Console.WriteLine("5. Volver a Menú Principal");
+            Console.Write("Ingresa una opcion(1-5): ");
+
+            opcion = int.Parse(Console.ReadLine());
+            switch (opcion)
+            {
+                case 1:
+                    PassengerHelper.AddPassenger();
+                    break;
+                case 2:
+                    PassengerHelper.ShowPassenger();
+                    break;
+                case 3:
+                    PassengerHelper.ModifyPassenger();
+                    break;
+                case 4:
+                    PassengerHelper.DeletePassenger();
+                    break;
+                case 5:
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida, por favor intente de nuevo");
+                    break;
+
+            }
+
+        }
     }
 }

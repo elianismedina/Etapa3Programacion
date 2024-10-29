@@ -13,7 +13,6 @@ namespace Etapa3Programacion
         public static void AddTicket()
         {
             
-
             Console.WriteLine("Ingrese el precio del ticket");
             double price = double.Parse(Console.ReadLine());
             Console.WriteLine("Ingrese la fecha del ticket (ddMMyyyy)");
@@ -31,7 +30,7 @@ namespace Etapa3Programacion
 
             int id = GenerateId();
 
-            var ticket = new Ticket(id,price, date, seatNumber, isSold);
+            var ticket = new Ticket(id, null, price, date, seatNumber, isSold);
             Tickets.Add(ticket);
             Console.WriteLine("Ticket añadido exitosamente");
         }
@@ -79,6 +78,18 @@ namespace Etapa3Programacion
         private static int GenerateId()
         {
             return Tickets.Count > 0 ? Tickets.Max(t => t.Id) + 1 : 1;
+        }
+        public static void SellTicket()
+        {   PassengerHelper.AddPassenger();
+
+            Console.WriteLine("Ingrese el ID del ticket a vender");
+            int id = int.Parse(Console.ReadLine());
+
+            Ticket ticket = Tickets.FirstOrDefault(t => t.Id == id);
+
+            ticket.IsSold = true;
+            Console.WriteLine("Ticket vendido exitosamente");
+
         }
 
 
