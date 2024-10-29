@@ -69,5 +69,11 @@ namespace Etapa3Programacion
         {
             return Routes.Count > 0 ? Routes.Max(r => r.Id) + 1 : 1;
         }
+        public static Route GetRoute()
+        {
+            Console.WriteLine("Ingrese el ID de la ruta");
+            int id = int.Parse(Console.ReadLine());
+            return Routes.FirstOrDefault(r => r.Id == id);
+        }
     }
 }

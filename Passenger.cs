@@ -13,6 +13,11 @@ namespace Etapa3Programacion
         {
             this.pesoEquipaje = pesoEquipaje;
         }
+        public double PesoEquipaje
+        {
+            get { return pesoEquipaje; }
+            set { pesoEquipaje = value; }
+        }
     }
     
 }

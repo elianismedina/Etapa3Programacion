@@ -10,10 +10,10 @@ class Program
         {
             Console.WriteLine("Sistema de transporte público");
             Console.WriteLine("1. Administrar Conductores");
-            Console.WriteLine("2. Administrar Véhiculos");
+            Console.WriteLine("2. Administrar Vehículos");
             Console.WriteLine("3. Administrar Rutas");
             Console.WriteLine("4. Administrar Véhiculos");
-            Console.WriteLine("5. Vender Tiquetes");
+            Console.WriteLine("5. Administrar Tiquetes");
             Console.WriteLine("6. Salir");
             Console.Write("Ingresa una opcion(1-6): ");
 
@@ -34,7 +34,7 @@ class Program
                     AdministrarVehiculos();
                     break;
                 case 5:
-                    VenderTiquetes();
+                    AdministrarTiquetes();
                     break;
                 case 6:
                     Console.WriteLine("Gracias por usar el sistema");
@@ -164,8 +164,43 @@ class Program
 
     }
 
-    static void VenderTiquetes()
+    static void AdministrarTiquetes()
     {
-        // Implementation here
+        int opcion = 0;
+        while (opcion != 5)
+        {
+            Console.WriteLine("Menú Administrar Tiquetes");
+            Console.WriteLine("1. Añadir tiquete");
+            Console.WriteLine("2. Ver tiquetes");
+            Console.WriteLine("3. Modificar tiquete");
+            Console.WriteLine("4. Remover tiquete");
+            Console.WriteLine("5. Volver a Menú Principal");
+            Console.Write("Ingresa una opcion(1-5): ");
+
+            opcion = int.Parse(Console.ReadLine());
+            switch (opcion)
+            {
+                case 1:
+                    TicketHelper.AddTicket();
+                    break;
+                case 2:
+                    TicketHelper.ShowTicket();
+                    break;
+                case 3:
+                    TicketHelper.ModifyTicket();
+                    break;
+                case 4:
+                    TicketHelper.DeleteTicket();
+                    break;
+                case 5:
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida, por favor intente de nuevo");
+                    break;
+
+            }
+        }
+
+        
     }
 }
